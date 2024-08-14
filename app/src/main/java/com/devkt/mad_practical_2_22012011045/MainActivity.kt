@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
+    private val TAG = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,62 +20,45 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        showToastMessage("onCreate function called")
     }
 
     override fun onStart() {
         super.onStart()
-        val text = "onStart function called"
-        val duration = Toast.LENGTH_SHORT
-        val toast = Toast.makeText(this, text, duration)
-        toast.show()
-        Log.d("onStart","onStart function called")
+        showSneckBarMessage("onStart function called")
     }
 
     override fun onResume() {
         super.onResume()
-        Snackbar.make(
-            findViewById(R.id.main),
-            "onResume function called",
-            Snackbar.LENGTH_SHORT
-        ).show()
-        Log.d("onResume","onResume function called")
+        showToastMessage("onResume function called")
     }
 
     override fun onPause() {
         super.onPause()
-        val text = "onPause function called"
-        val duration = Toast.LENGTH_SHORT
-        val toast = Toast.makeText(this, text, duration)
-        toast.show()
-        Log.d("onPause","onPause function called")
+        showSneckBarMessage("onPause function called")
     }
 
     override fun onStop() {
         super.onStop()
-        Snackbar.make(
-            findViewById(R.id.main),
-            "onStop function called",
-            Snackbar.LENGTH_SHORT
-        ).show()
-        Log.d("onStop","onStop function called")
+        showToastMessage("onStop function called")
     }
 
     override fun onRestart() {
         super.onRestart()
-        val text = "onRestart function called"
-        val duration = Toast.LENGTH_SHORT
-        val toast = Toast.makeText(this, text, duration)
-        toast.show()
-        Log.d("onRestart","onRestart function called")
+        showSneckBarMessage("onRestart function called")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Snackbar.make(
-            findViewById(R.id.main),
-            "onDestroy function called",
-            Snackbar.LENGTH_SHORT
-        ).show()
-        Log.d("onDestroy","onDestroy function called")
+        showToastMessage("onDestroy function called")
+    }
+    private fun showToastMessage(msg:String){
+        Log.i(TAG, msg)
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showSneckBarMessage(msg:String){
+        Log.i(TAG, msg)
+        Snackbar.make(findViewById(R.id.main), msg, Snackbar.LENGTH_SHORT).show()
     }
 }
