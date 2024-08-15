@@ -3,4 +3,5 @@ TextView properties should be Holo Blue color (android:textColor=@android:color/
 italic (android:textStyle="bold|italic"). After creating Activity, demonstrate functions of Activity Life Cycle by using Log message, Toast message & Snackbar message.
 All methods of Activity life cycle should be printed in Logcat.**
 
-![Screenshot_Prac-2](https://github.com/user-attachments/assets/560d1fd3-3c88-446f-92e0-51a071ae710e)
+
+![prac-2_1](https://github.com/user-attachments/assets/eb27c816-8426-4317-90c5-5b108eac3290)
